@@ -8,5 +8,6 @@
     "intro": "path to your audio intro file",
     "joke_channel": "your special joke channel",
     "debug" : true /*true disable annoying things*/,
+    "survey_duration": 10,
     "joke_api_token" : "your 'blagues-api' token"
 }

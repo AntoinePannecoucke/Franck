@@ -1,6 +1,7 @@
 const Commando = require("../../../node_modules/discord.js-commando");
 const BlaguesAPI = require('../../../node_modules/blagues-api');
 const config = require('../../../conf/config.json');
+const globals = require("../../globals");
 
 module.exports = class JokeCommand extends Commando.Command {
 
@@ -19,12 +20,8 @@ module.exports = class JokeCommand extends Commando.Command {
             disallow: [blagues.categories.GLOBAL, blagues.categories.DEV]
         });
         message.channel.send(joke.joke);
-        await sleep(2500);
+        await globals.sleep(2500);
         message.channel.send(joke.answer);
     }
     
-}
-
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
 }

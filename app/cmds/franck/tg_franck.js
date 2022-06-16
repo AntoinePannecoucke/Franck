@@ -7,6 +7,7 @@ module.exports = class TgFranckCommand extends Commando.Command {
         super(client, {
             name: "tg_franck",
             group: "franck",
+            alias: ["tgf"],
             memberName: "tg_franck",
             description: "Ferme la gueule à Franck"
         })

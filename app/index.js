@@ -2,12 +2,6 @@ const config = require('../conf/config.json');
 const path = require("path");
 const globals = require("./globals");
 const Commando = require("discord.js-commando");
-const ytdl = require('ytdl-core');
-const express = require('express');
-const { InteractionType, InteractionResponseFlags, InteractionResponseType, verifyKeyMiddleware } = require('discord-interactions');
-
-const app = express();
-
 
 const client = new Commando.CommandoClient({
     owner: config.owner,
@@ -40,26 +34,9 @@ client.on("ready", () => {
         channel.send("@everyone Y A QUELQU'UUUUUUUUUUN ?!! ALLOOOOOOOOOOOO !! EST CE QUE VOUS M'ENTENDEZ ?!! AAAALLOOOOOOOOOOOOOO !!!");
     }
 
-    app.post('/interactions', verifyKeyMiddleware(config.discord_token), (req, res) => {
-        const interaction = req.body;
-        if (interaction.type === InteractionType.MESSAGE_COMPONENT) {
-            res.send({
-                type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
-                data: {
-                    content: 'Hello, you interacted with a component.',
-                    flags: InteractionResponseFlags.EPHEMERAL,
-                },
-            });
-        }
-    });
-
-    app.listen(8999, () => {
-
-    })
-
     globals.jokeChannel = client.channels.cache.get(config.joke_channel);
     channel = client.channels.cache.get(config.general_voice_channel);
-    if (channel.type == "voice"){
+    if (channel.type == "voice" && !config.debug){
         channel.join().then(connection => {
             globals.voiceConnection = connection;
             globals.musicPlayer = globals.voiceConnection.play(config.intro);

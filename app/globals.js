@@ -7,6 +7,11 @@ class Globals {
         let voiceConnection = null;
         let isPlaylistPlaying = false;
         let jokeChannel = null;
+        var Survey = {
+            isSurveyRunning: false,
+            answers: [],
+            answersCount: 0
+        }
     }
 
     destroyMusicPlayer(){
@@ -35,5 +40,13 @@ module.exports = {
         } catch (error) {
             console.log(error);
         }
+    },
+    sleep: function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    },
+    Survey : {
+        isSurveyRunning: false,
+        answers: [],
+        answersCount: 0
     }
 }
