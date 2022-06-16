@@ -29,7 +29,7 @@ module.exports = {
     log: async function log(tag, message) {
         try {
             var today = new Date()
-            var logFileName = today.getDay() + "-" + today.getMonth() + "-" + today.getFullYear() + ".log"
+            var logFileName = today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear() + ".log"
             var content = today.getHours() + ":" + today.getMinutes() + "[" + tag + "]" + message + "\n"
             await fs.appendFile(paths.logPath + logFileName, content); 
         } catch (error) {
