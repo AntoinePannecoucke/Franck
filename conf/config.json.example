@@ -1,0 +1,12 @@
+//Config example file
+{
+    "prefix" : "your command prefix",
+    "discord_token" : "your secret discord token",
+    "owner" : "your discord id",
+    "general_text_channel" : "your general text channel",
+    "general_voice_channel" : "your general voice channel",
+    "intro": "path to your audio intro file",
+    "joke_channel": "your special joke channel",
+    "debug" : true /*true disable annoying things*/,
+    "joke_api_token" : "your 'blagues-api' token"
+}

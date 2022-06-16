@@ -1,0 +1,7 @@
+{
+    "textPath" : "../../../resources/text/",
+    "gifPath" : "../../../resources/assets/gif/",
+    "audioPath" : "../../../resources/audio/",
+    "jsonPath": "../../../resources/json/",
+    "logPath": "log/"
+}

@@ -1,0 +1,10 @@
+{
+    "AppName" : "Franck",
+    "MajorVersionNumber" : 0,
+    "MinorVersionNumber" : 1,
+    "RevisionVersionNumber" : 3,
+    "VersionName" : "Beta",
+    "AuthorsNames" : [
+        "Antoine Pannecoucke"
+    ]
+}
